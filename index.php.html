@@ -32,19 +32,26 @@
 			<li>9. Once the website gives you confirmation that your
 				post has been submitted you can no view it as you wish.</li>
 		</uL>
-		<h1><strong>Post</strong></h1>
-			<ol>
-				<li>postID(primary key)</li>
+		<h2>Profile:</h2>
+		<ul>
+			<li>profileId(Primary key)</li>
+			<li>profileAtHandel</li>
+			<li>ProfileEmail</li>
+			<li>profilePhone</li>
+		</ul>
+		<h3><strong>Post</strong></h3>
+			<ul>
+				<li>postId(primary key)</li>
 				<li>postTopic</li>
 				<li>postDateTime</li>
-			</ol>
-			<h2><strong>Comment</strong></h2>
-				<ol>
-					<li>commentID(primary Key)</li>
-					<li>commentedPostID(Foregin Key)</li>
+			</ul>
+			<h3><strong>Comment</strong></h3>
+				<ul>
+					<li>commentId(primary Key)</li>
+					<li>commentedPostId(Foregin Key)</li>
 					<li>comment</li>
 					<li>commentDateTime</li>
-				</ol>
+				</ul>
 		<p>One post can have many comments (1 - n)</p>
 	</body>
 </html>
