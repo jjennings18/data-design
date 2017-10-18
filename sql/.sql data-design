@@ -24,4 +24,4 @@ INDEX(commentId)
 PRIMARY KEY(commentId)
 
 FOREIGN KEY(postId) REFERENCES profile (profileId)
-)
+ )
