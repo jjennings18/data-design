@@ -29,9 +29,10 @@ PRIMARY KEY (postId)
 
   Create TABLE comment (
 commentId BINARY(20) NOT NULL,
-commentedPostId BINARY(20)
-comment VARCHAR (1000)
-commentDateTime DATETIME(6)
+commentProfilestId BINARY(20) NOT NULL,
+commentpostId Binary(20) NOT NULL,
+comment VARCHAR (1000) NOT NULL,
+commentDateTime DATETIME(6) NOT NULL,
 INDEX(postId)
 INDEX(commentId)
 PRIMARY KEY(commentId)
