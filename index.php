@@ -48,14 +48,17 @@
 		<h3><strong>Post</strong></h3>
 			<ul>
 				<li>postId(primary key)</li>
+				<li>postProfileId(Foreign Key)</li>
 				<li>postTopic</li>
+				<li>postContent</li>
 				<li>postDateTime</li>
 			</ul>
 			<h3><strong>Comment</strong></h3>
 				<ul>
 					<li>commentId(primary Key)</li>
+					<li>commentCommentId(Foregin Key)</li>
 					<li>commentedPostId(Foregin Key)</li>
-					<li>comment</li>
+					<li>comment(Foregin Key)</li>
 					<li>commentDateTime</li>
 				</ul>
 		<p>One post can have many comments (1 - n)</p>
