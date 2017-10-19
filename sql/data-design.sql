@@ -28,7 +28,7 @@ PRIMARY KEY (postId)
 
 
   Create TABLE comment (
-commentId BINARY(20)
+commentId BINARY(20) NOT NULL,
 commentedPostId BINARY(20)
 comment VARCHAR (1000)
 commentDateTime DATETIME(6)
