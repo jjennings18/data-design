@@ -65,5 +65,6 @@
 		<h4>Relations</h4>
 		<p>One post can have many comments (1 - n)</p>
 		<p>One comment can have many comments (1 - n)</p>
+		<P>One user can post many post (1 - n)</P>
 	</body>
 </html>
