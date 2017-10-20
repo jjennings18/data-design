@@ -6,12 +6,12 @@ SELECT * FROM comment;
 -- Update for Entities
 UPDATE profile SET profilePhone = "2813308004";
 UPDATE post SET postContent = "Hello World";
-UPDATE comment SET commentCommentId = "MySQL is a lot of work";
+UPDATE comment SET commentContent = "MySQL is a lot of work";
 
 -- Delete for Entities
 DELETE FROM profile WHERE profileEmail;
 DELETE FROM post WHERE postTopic;
-DELETE FROM comment WHERE commentCommentId;
+DELETE FROM comment WHERE commentContent;
 
 -- Insert for Entities
 INSERT INTO profile VALUES ();
