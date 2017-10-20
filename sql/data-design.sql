@@ -29,7 +29,7 @@ PRIMARY KEY (postId)
 
   Create TABLE comment (
 commentId BINARY(20) NOT NULL,
-commentProfilestId BINARY(20) NOT NULL,
+commentProfileId BINARY(20) NOT NULL,
 commentpostId Binary(20) NOT NULL,
 comment VARCHAR (1000) NOT NULL,
 commentDateTime DATETIME(6) NOT NULL,
