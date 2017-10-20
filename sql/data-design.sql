@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS comment;
 
 CREATE TABLE profile (
   -- primary key
-  profileId BINARY(20) NOT NULL,
+  profileId BINARY(16) NOT NULL,
   porfilActivationToken CHAR(32),
   profileAtHandle VARCHAR(30) NOT NULL,
   ProfileEmail VARCHAR(200) NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE profile (
 
 CREATE TABLE post (
   -- primary key
-  postId BINARY(20) NOT NULL,
+  postId BINARY(16) NOT NULL,
   -- foreign key
   postProfileId BINARY(20) NOT NULL,
   postTopic VARCHAR(200) NOT NULL,
@@ -37,10 +37,10 @@ CREATE TABLE post (
 
 Create TABLE comment (
   -- primary key
-  commentId BINARY(20) NOT NULL,
+  commentId BINARY(16) NOT NULL,
   -- foreign key
-  commentProfileId BINARY(20) NOT NULL,
-  commentpostId Binary(20) NOT NULL,
+  commentProfileId BINARY(16) NOT NULL,
+  commentpostId Binary(16) NOT NULL,
   commentContent VARCHAR (1000) NOT NULL,
   commentDateTime DATETIME(6) NOT NULL,
   INDEX(commentPostId),
@@ -48,5 +48,6 @@ Create TABLE comment (
   PRIMARY KEY(commentId),
   -- defined foreign key and relation
   FOREIGN KEY(commentPostId) REFERENCES post (postId)
+
 );
 
