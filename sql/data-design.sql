@@ -31,7 +31,7 @@ PRIMARY KEY (postId)
 commentId BINARY(20) NOT NULL,
 commentProfileId BINARY(20) NOT NULL,
 commentpostId Binary(20) NOT NULL,
-comment VARCHAR (1000) NOT NULL,
+commentContent VARCHAR (1000) NOT NULL,
 commentDateTime DATETIME(6) NOT NULL,
 INDEX(postId)
 INDEX(commentId)
@@ -39,3 +39,4 @@ PRIMARY KEY(commentId)
 
 FOREIGN KEY(postId) REFERENCES profile (profileId)
 )
+
