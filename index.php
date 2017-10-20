@@ -59,7 +59,7 @@
 					<li>commentId(primary Key)</li>
 					<li>commentProfileId(Foreign Key)</li>
 					<li>commentedPostId(Foreign Key)</li>
-					<li>comment(Foreign Key)</li>
+					<li>commentCommentId(Foreign Key)</li>
 					<li>commentDateTime</li>
 				</ul>
 		<h4>Relations</h4>
