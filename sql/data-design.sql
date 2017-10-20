@@ -41,10 +41,9 @@ Create TABLE comment (
   -- foreign key
   commentProfileId BINARY(20) NOT NULL,
   commentpostId Binary(20) NOT NULL,
-  commentCommentId VARCHAR (1000) NOT NULL,
+  commentContent VARCHAR (1000) NOT NULL,
   commentDateTime DATETIME(6) NOT NULL,
   INDEX(commentPostId),
-  INDEX(commentId),
   -- defined primary key
   PRIMARY KEY(commentId),
   -- defined foreign key and relation
