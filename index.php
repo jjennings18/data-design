@@ -66,5 +66,7 @@
 		<p>One post can have many comments (1 - n)</p>
 		<p>One comment can have many comments (1 - n)</p>
 		<P>One user can post many post (1 - n)</P>
+
+		<img src="image/data-design-erd.svg"/>
 	</body>
 </html>
