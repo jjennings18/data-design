@@ -36,7 +36,7 @@
 			<li>9. Once the website gives you confirmation that your
 				post has been submitted you can no view it as you wish.</li>
 		</uL>
-		<h2>Profile:</h2>
+		<h2>Profile:</h2
 		<ul>
 			<li>profileId(Primary key)</li>
 			<li>profileActivationToken</li>
