@@ -107,7 +107,7 @@ WHERE profileId = "c0610dba-5116-4267-b9e1-57648eb2acc4";
 
 -- update post content of post id
 UPDATE post
-SET postContent = "What is the best cell phon service in the area?"
+SET postContent = "What is the best cell phone service in the area?"
 WHERE postId = "da55da7e-54d4-4b3d-9702-42528cd9ecc7";
 
 -- update comment content of post id
@@ -118,12 +118,12 @@ WHERE commentPostId = "a396ee69-be98-4e06-88e1-34620d0ae751";
 -- select profile handle from profile salt
 SELECT profileAtHandle
 FROM profile
-WHERE profileSalt = "fab776b9416e74e4715f296f2e77b1fc8b00cee20d192975db6fc76b9694d7d0";
+WHERE profileId = "UNHEX(REPLACE("c0610dba-5116-4267-b9e1-57648eb2acc4", "-", ""))";
 
 -- select post topic from post content
 SELECT postTopic
 FROM post
-WHERE postContent = "What is the best cell phon service in the area";
+WHERE profileId = "UNHEX(REPLACE("c0610dba-5116-4267-b9e1-57648eb2acc4", "-", ""))";
 
 -- select comment post id from comment profile id
 SELECT commentPostId
@@ -136,9 +136,9 @@ WHERE profileEmail = "bob123@gmail.com";
 
 -- delete empty date from post entity
 DELETE FROM post
-WHERE postDate = "";
+WHERE postId = "da55da7e-54d4-4b3d-9702-42528cd9ecc7";
 
 -- delete empty date from comment entity
 DELETE FROM comment
-WHERE commentDate = "";
+WHERE commentId = "a396ee69-be98-4e06-88e1-34620d0ae751";
 
