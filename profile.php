@@ -26,36 +26,36 @@ class profile {
 	 */
 	private $profileHandle;
 
-/**
- * email for profile
- * @var $profileEmail
- */
-private $profileEmail;
+	/**
+	 * email for profile
+	 * @var $profileEmail
+	 */
+	private $profileEmail;
 
-/**
- * Hash for profile
- * @var  $profileHash
- */
-private $profileHash;
+	/**
+	 * Hash for profile
+	 * @var  $profileHash
+	 */
+	private $profileHash;
 
-/**
- * phone number for profile
- * @var $profilePhone
- */
-private $profilePhone;
+	/**
+	 * phone number for profile
+	 * @var $profilePhone
+	 */
+	private $profilePhone;
 
-/**
- * salt for profile
- * @var $porfileSalt
- */
-private $profileSalt;
+	/**
+	 * salt for profile
+	 * @var $porfileSalt
+	 */
+	private $profileSalt;
 
 	/** constructor for this profile
 	 *
 	 */
-	public function __construct($newprofileid,$newprofileActivationToken,
+	public function __construct($newprofileid, $newprofileActivationToken,
 										 $newprofileHandle, $newprofileEmail, $newprofileHash,
-										 $newprofilePhone, $newprofileSalt  ) {
+										 $newprofilePhone, $newprofileSalt) {
 		TRY {
 			$this->setprofileId($newprofileid);
 			$this->setprofileActivationToken($newprofileActivationToken);
@@ -64,8 +64,30 @@ private $profileSalt;
 			$this->setprofileHash($newprofileHash);
 			$this->setprofilePhone($newprofilePhone);
 			$this->setprofileSalt($newprofileSalt);
-			}
-			catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception)
+		} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
+			$exceptionType = get_class($exception);
+			throw(new $exceptionType($exception->getMessage(), 0, $exception));
+		}
 	}
 }
+/**
+ * accessor method for profile
+ *
+ */
 
+public function getProfileId(): Uuid {
+	return ($this->profileId);
+}
+
+/**
+ * Mutator method for profile.
+ */
+public function setProfileId($newProfileId): void {
+	try {
+		$uuid = self::validation($newProfileId);
+	} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
+		$exceptionType = get_class ($exception);
+		throw(new $exceptionType($exception->getMessage(), 0, $exception));
+	}
+	$this->profileId = $uuid
+}
