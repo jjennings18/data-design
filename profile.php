@@ -56,15 +56,16 @@ private $profileSalt;
 	public function __construct($newprofileid,$newprofileActivationToken,
 										 $newprofileHandle, $newprofileEmail, $newprofileHash,
 										 $newprofilePhone, $newprofileSalt  ) {
-										TRY {
-											$this->setprofileId($newprofileid);
-											$this->setprofileActivationToken($newprofileActivationToken);
-											$this->setprofileHandle($newprofileHandle);
-											$this->setprofileEmail($newprofileEmail);
-											$this->setprofileHash($newprofileHash);
-											$this->setprofilePhone($newprofilePhone);
-											$this->setprofileSalt($newprofileSalt);
-	}
+		TRY {
+			$this->setprofileId($newprofileid);
+			$this->setprofileActivationToken($newprofileActivationToken);
+			$this->setprofileHandle($newprofileHandle);
+			$this->setprofileEmail($newprofileEmail);
+			$this->setprofileHash($newprofileHash);
+			$this->setprofilePhone($newprofilePhone);
+			$this->setprofileSalt($newprofileSalt);
+			}
+			catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception)
 	}
 }
 

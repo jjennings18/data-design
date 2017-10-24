@@ -51,3 +51,94 @@ Create TABLE comment (
 	FOREIGN KEY(commentProfileId) REFERENCES profile (profileId)
 );
 
+
+
+INSERT INTO profile (profileId, profileActivationToken, profileAtHandle,
+							profileEmail, profileHash, profileSalt, profilePhone)
+VALUES (
+	-- generated UUID for profile ID converted to binary format
+	UNHEX(REPLACE("c0610dba-5116-4267-b9e1-57648eb2acc4", "-", "")),
+	-- activation token
+	"11ccfb9bf715af1c5a00330888470fa0",
+	-- at handle
+	"@Bobby23",
+	-- email
+	"Bob123@gmail.com",
+	-- hash
+	"5cdb3042291015982db2e30d5df9746a772fb0b42c8ba1084d9bb321fe92ad6b08d43fa31360063b664270d06ce836de0dadbc56469fbc
+	c8326bl5fd587a8fb8",
+	-- salt
+	"fab776b9416e74e4715f296f2e77b1fc8b00cee20d192975db6fc76b9694d7d0",
+	-- phone
+	"2813308004"
+);
+
+INSERT INTO post (postId, postProfileId, postTopic, postContent, postDate)
+VALUES (
+	-- generated UUID for post ID converted to binary format
+	UNHEX(REPLACE("da55da7e-54d4-4b3d-9702-42528cd9ecc7", "-", "")),
+	-- post profile ID
+	UNHEX(REPLACE("c0610dba-5116-4267-b9e1-57648eb2acc4", "-", "")),
+	-- post topic
+	"",
+	-- post content
+	"",
+	-- post date
+	""
+);
+
+INSERT INTO comment (commentId, commentProfileId, commentPostId, commentContent, commentDate)
+VALUES (
+	-- comment id
+	UNHEX(REPLACE("a396ee69-be98-4e06-88e1-34620d0ae751", "-", "")),
+	-- comment profile id
+	UNHEX(REPLACE("c0610dba-5116-4267-b9e1-57648eb2acc4", "-", "")),
+	-- comment post id
+	UNHEX(REPLACE("da55da7e-54d4-4b3d-9702-42528cd9ecc7", "-", "")),
+	-- comment content id
+	"",
+	-- comment date
+	""
+);
+-- update phone number of profile id
+UPDATE profile
+SET profilePhone = "2813308004"
+WHERE profileId = "c0610dba-5116-4267-b9e1-57648eb2acc4";
+
+-- update post content of post id
+UPDATE post
+SET postContent = "What is the best cell phon service in the area?"
+WHERE postId = "da55da7e-54d4-4b3d-9702-42528cd9ecc7";
+
+-- update comment content of post id
+UPDATE comment
+SET commentContent = "Verizon"
+WHERE commentPostId = "a396ee69-be98-4e06-88e1-34620d0ae751";
+
+-- select profile handle from profile salt
+SELECT profileAtHandle
+FROM profile
+WHERE profileSalt = "fab776b9416e74e4715f296f2e77b1fc8b00cee20d192975db6fc76b9694d7d0";
+
+-- select post topic from post content
+SELECT postTopic
+FROM post
+WHERE postContent = "What is the best cell phon service in the area";
+
+-- select comment post id from comment profile id
+SELECT commentPostId
+FROM comment
+WHERE commentProfileId = "c0610dba-5116-4267-b9e1-57648eb2acc4";
+
+-- delete email from profile entity
+DELETE FROM profile
+WHERE profileEmail = "bob123@gmail.com";
+
+-- delete empty date from post entity
+DELETE FROM post
+WHERE postDate = "";
+
+-- delete empty date from comment entity
+DELETE FROM comment
+WHERE commentDate = "";
+

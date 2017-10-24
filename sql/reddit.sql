@@ -17,3 +17,4 @@ DELETE FROM comment WHERE commentContent;
 INSERT INTO profile VALUES ();
 INSERT INTO post VALUES ();
 INSERT INTO comment VALUES ();
+
