@@ -69,59 +69,60 @@ class profile {
 			throw(new $exceptionType($exception->getMessage(), 0, $exception));
 		}
 	}
-}
-/**
- * accessor method for profile
- *
- */
 
-public function getProfileId(): Uuid {
-	return ($this->profileId);
-}
+	/**
+	 * accessor method for profile
+	 *
+	 */
 
-/**
- * Mutator method for profile.
- */
-public function setProfileId($newProfileId): void {
-	try {
-		$uuid = self::validation($newProfileId);
-	} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
-		$exceptionType = get_class ($exception);
-		throw(new $exceptionType($exception->getMessage(), 0, $exception));
+	public function getProfileId(): Uuid {
+		return ($this->profileId);
 	}
-	$this->profileId = $uuid
-}
 
-/**
- * accessor method for account activation token
- *
- * @return string value of the activation token
- **/
-public function getProfileActivationToken() : ?string {
-	return ($this->profileActivationToken);
-}
+	/**
+	 * Mutator method for profile.
+	 */
+	public function setProfileId($newProfileId): void {
+		try {
+			$uuid = self::validation($newProfileId);
+		} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
+			$exceptionType = get_class($exception);
+			throw(new $exceptionType($exception->getMessage(), 0, $exception));
+		}
+		$this->profileId = $uuid;
+	}
 
-/**
- * mutator method for account activation token
- *
- * @param string $newProfileActivationToken
- * @throws \InvalidArgumentException  if the token is not a string or insecure
- * @throws \RangeException if the token is not exactly 32 characters
- * @throws \TypeError if the activation token is not a string
- **/
-public function setProfileActivationToken(?string $newProfileActivationToken): void {
-	if($newProfileActivationToken === null) {
-		$this->profileActivationToken = null;
-		return;
-	}
-	$newProfileActivationToken = strtolower(trim($newProfileActivationToken));
-	if(ctype_xdigit($newProfileActivationToken) === false) {
-		throw(new\RangeException("user activation is not valid"));
-	}
-	//make sure user activation token is only 32 characters
-	if(strlen($newProfileActivationToken) !== 32) {
-		throw(new\RangeException("user activation token has to be 32"));
-	}
-	$this->profileActivationToken = $newProfileActivationToken;
-}
 
+	/**
+	 * accessor method for account activation token
+	 *
+	 * @return string value of the activation token
+	 **/
+	public function getProfileActivationToken(): ?string {
+		return ($this->profileActivationToken);
+	}
+
+	/**
+	 * mutator method for account activation token
+	 *
+	 * @param string $newProfileActivationToken
+	 * @throws \InvalidArgumentException  if the token is not a string or insecure
+	 * @throws \RangeException if the token is not exactly 32 characters
+	 * @throws \TypeError if the activation token is not a string
+	 **/
+	public function setProfileActivationToken(?string $newProfileActivationToken): void {
+		if($newProfileActivationToken === null) {
+			$this->profileActivationToken = null;
+			return;
+		}
+		$newProfileActivationToken = strtolower(trim($newProfileActivationToken));
+		if(ctype_xdigit($newProfileActivationToken) === false) {
+			throw(new\RangeException("user activation is not valid"));
+		}
+		//make sure user activation token is only 32 characters
+		if(strlen($newProfileActivationToken) !== 32) {
+			throw(new\RangeException("user activation token has to be 32"));
+		}
+		$this->profileActivationToken = $newProfileActivationToken;
+	}
+}
