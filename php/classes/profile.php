@@ -91,3 +91,4 @@ public function setProfileId($newProfileId): void {
 	}
 	$this->profileId = $uuid
 }
+
