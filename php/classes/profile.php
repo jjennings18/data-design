@@ -125,4 +125,13 @@ class profile {
 		}
 		$this->profileActivationToken = $newProfileActivationToken;
 	}
-}
+
+	/**
+	 * accessor method for email
+	 * @return string value of email
+	 **/
+	public function getProfileEmail(): string {
+		return $this->profileEmail;
+	}
+
+
