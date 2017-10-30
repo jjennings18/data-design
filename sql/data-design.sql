@@ -123,7 +123,7 @@ WHERE profileId = "UNHEX(REPLACE("c0610dba-5116-4267-b9e1-57648eb2acc4", "-", ""
 -- select post topic from post content
 SELECT postTopic
 FROM post
-WHERE profileId = "UNHEX(REPLACE("c0610dba-5116-4267-b9e1-57648eb2acc4", "-", ""))";
+WHERE profileId = "UNHEX(REPLACE("c0610d1ba-5116-4267-b9e1-57648eb2acc4", "-", ""))";
 
 -- select comment post id from comment profile id
 SELECT commentPostId
